@@ -1,8 +1,15 @@
 <template>
-  <div>
-    <div class="col-12 list" v-for="item in activities" v-bind:key="item.datetime.getMilliseconds()">
-      {{ item.type }} -> {{ item.uses }} -> {{ item.action }} ({{ item.datetime }})
-    </div>
+  <div class="list-group">
+    <a
+      class="list-group-item list-group-item-action flex-column align-items-start"
+      v-for="item in activities"
+      v-bind:key="item.datetime.toISOString()"
+    >
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ item.datetime.toLocaleDateString() }} - {{ item.datetime.toLocaleTimeString() }}</h5>
+      </div>
+      <p class="mb-1">{{ item.type }} -> {{ item.uses }} -> {{ item.action }}</p>
+    </a>
   </div>
 </template>
 
@@ -14,7 +21,7 @@ export default {
   data () {
     return {
       activities: [
-        {type: 'Moving', uses: 'Car', action: 'Rental', comment: null, datetime: new Date(), location: null}
+        {type: 'Waiting for', uses: 'New', action: 'Activity', comment: null, datetime: new Date(), location: null}
       ]
     }
   }
