@@ -1,32 +1,28 @@
 <template>
-  <h3>nada</h3>
+  <div>
+    <div class="col-12 list" v-for="item in activities" v-bind:key="item.datetime.getMilliseconds()">
+      {{ item.type }} -> {{ item.uses }} -> {{ item.action }} ({{ item.datetime }})
+    </div>
+  </div>
 </template>
 
 <script>
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 export default {
   name: 'ActivitiesList',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      activities: [
+        {type: 'Moving', uses: 'Car', action: 'Rental', comment: null, datetime: new Date(), location: null}
+      ]
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  h3 {
+    color: red;
+ }
 </style>
