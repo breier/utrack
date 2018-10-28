@@ -1,0 +1,28 @@
+<template>
+  <div id="app">
+    <router-view/>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App'
+}
+</script>
+
+<style>
+@font-face {
+  font-family: webCantarell;
+  src: url("./assets/Cantarell-Regular.woff");
+}
+body {
+  color: #3A6B5C;
+  background: #EAEAEA;
+  font-family: Cantarell, webCantarell, Roboto, "Droid Sans", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.471;
+  overflow-x: hidden;
+  font-smoothing: antialiased;
+}
+</style>
