@@ -15,6 +15,9 @@ export default {
   font-family: webCantarell;
   src: url("./assets/Cantarell-Regular.woff");
 }
+html, body, #app {
+    height: 100%;
+}
 body {
   color: #3A6B5C;
   background: #EAEAEA;

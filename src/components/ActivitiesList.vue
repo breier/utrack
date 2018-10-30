@@ -1,15 +1,18 @@
 <template>
-  <div class="list-group">
-    <a
-      class="list-group-item list-group-item-action flex-column align-items-start"
-      v-for="item in activities"
-      v-bind:key="item.datetime.toISOString()"
-    >
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{ item.datetime.toLocaleDateString() }} - {{ item.datetime.toLocaleTimeString() }}</h5>
-      </div>
-      <p class="mb-1">{{ item.type }} -> {{ item.uses }} -> {{ item.action }}</p>
-    </a>
+  <div class="list-group container">
+    <div class="list-group">
+      <a
+        class="list-group-item list-group-item-action flex-column align-items-start"
+        v-for="item in activities"
+        v-bind:key="item.datetime.toISOString()"
+      >
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ item.datetime.toLocaleDateString() }} - {{ item.datetime.toLocaleTimeString() }}</h5>
+        </div>
+        <p class="mb-1">{{ item.type }} -> {{ item.uses }} -> {{ item.action }}</p>
+      </a>
+    </div>
+    <button class="btn btn-primary action">Add Activity</button>
   </div>
 </template>
 
@@ -29,7 +32,11 @@ export default {
 </script>
 
 <style scoped>
-  h3 {
-    color: red;
- }
+  .container {
+    height: 100%;
+    padding-right: 0;
+  }
+  .action {
+    margin: auto 0 0 0;
+  }
 </style>
