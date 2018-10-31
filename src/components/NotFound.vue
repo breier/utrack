@@ -1,7 +1,8 @@
 <template>
   <div class="container">
+     <br />
     <h3>Not Found</h3>
-    <a href="#/">Home</a>
+    <a href="#/">Go Home</a>
   </div>
 </template>
 

@@ -8,6 +8,8 @@
 export default {
   name: 'App'
 }
+// eslint-disable-next-line
+//console.log('example')
 </script>
 
 <style>
@@ -26,6 +28,7 @@ body {
   font-weight: 400;
   line-height: 1.471;
   overflow-x: hidden;
+  letter-spacing: 0.04em;
   font-smoothing: antialiased;
 }
 </style>

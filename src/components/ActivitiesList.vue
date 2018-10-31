@@ -19,6 +19,7 @@
 <script>
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 export default {
   name: 'ActivitiesList',
   data () {
@@ -27,6 +28,13 @@ export default {
         {type: 'Waiting for', uses: 'New', action: 'Activity', comment: null, datetime: new Date(), location: null}
       ]
     }
+  },
+  mounted () {
+    this.$db.activities.toArray().then(function (result) {
+      if (result.length) {
+        this.activities = result
+      }
+    })
   }
 }
 </script>
@@ -34,7 +42,7 @@ export default {
 <style scoped>
   .container {
     height: 100%;
-    padding-right: 0;
+    padding: 2px;
   }
   .action {
     margin: auto 0 0 0;

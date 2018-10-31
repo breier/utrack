@@ -1,6 +1,7 @@
 <template>
   <div class="list-group container">
-    <p>nada</p>
+    <button class="btn btn-info" v-for="type in types" v-bind:key="type.id">{{ type.text }}</button>
+    <a class="btn btn-danger action" href="#/">Cancel</a>
   </div>
 </template>
 
@@ -11,11 +12,31 @@ export default {
   name: 'AddActivity',
   data () {
     return {
-      actions: [
-        'Moving',
-        'Working'
-      ]
+      types: null,
+      uses: null,
+      actions: null
     }
+  },
+  methods: {
+    initDB () {
+      this.$db.types.add({text: 'Waiting for'})
+      this.$db.types.add({text: 'On the Move'})
+      this.$db.types.add({text: 'Working on'})
+      this.getTypes()
+    },
+    getTypes () {
+      let that = this
+      this.$db.types.toArray().then(function (result) {
+        if (result.length) {
+          that.types = result
+        } else {
+          that.initDB()
+        }
+      })
+    }
+  },
+  mounted () {
+    this.getTypes()
   }
 }
 </script>
@@ -23,6 +44,9 @@ export default {
 <style scoped>
   .container {
     height: 100%;
-    padding-right: 0;
+    padding: 2px;
+  }
+  .action {
+    margin: auto 0 0 0;
   }
 </style>

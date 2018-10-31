@@ -19,14 +19,14 @@ export default new Router({
       component: AddActivity
     },
     {
-      path: "*",
+      path: '*',
       redirect: {
-        name: "404"
+        name: '404'
       }
     },
     {
-      path: "/404",
-      name: "404",
+      path: '/404',
+      name: '404',
       component: NotFound
     }
   ]

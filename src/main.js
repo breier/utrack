@@ -12,9 +12,12 @@ Vue.use(VueIdb)
 
 const idb = new VueIdb({
   version: 1,
-  database: 'utrak',
+  database: 'utrack',
   schemas: [
-    { activities: 'id, type, uses, action, comment, datetime' }
+    { activities: '++id, type, uses, action, comment, datetime' },
+    { types: '++id, text' },
+    { uses: '++id, typeID, text' },
+    { action: '++id, useID, text' }
   ]
 })
 
