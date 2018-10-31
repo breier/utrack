@@ -12,7 +12,7 @@
         <p class="mb-1">{{ item.type }} -> {{ item.uses }} -> {{ item.action }}</p>
       </a>
     </div>
-    <button class="btn btn-primary action">Add Activity</button>
+    <a class="btn btn-primary action" href="#/add">Add Activity</a>
   </div>
 </template>
 
