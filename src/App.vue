@@ -32,7 +32,7 @@ body {
   font-smoothing: antialiased;
 }
 .btn {
-  line-height: 3em;
+  line-height: 3em !important;
 }
 .btn + .btn {
   margin-top: 2px;
