@@ -1,5 +1,6 @@
 <template>
   <div class="list-group container">
+    <a @click="clearAllDB">Clear DataBase & Restart (ß)</a>
     <div class="list-group">
       <a class="list-group-item list-group-item-action flex-column align-items-start" v-for="activity in activities" v-bind:key="activity.id">
         <div class="d-flex w-100 justify-content-between">
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import Dexie from 'dexie'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -29,6 +31,12 @@ export default {
     }
   },
   methods: {
+    clearAllDB () {
+      Dexie.delete('utrack')
+        .then(function (result) {
+          window.location.reload()
+        })
+    },
     endActivity (event) {
       let that = this
 

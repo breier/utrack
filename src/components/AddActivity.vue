@@ -58,6 +58,7 @@ export default {
     addType () {
       if (this.newType.length > 2) {
         let that = this
+
         this.$db.types
           .add({text: that.newType})
           .then(function (result) {
@@ -98,6 +99,7 @@ export default {
     addUse () {
       if (this.newUse.length > 2) {
         let that = this
+
         this.$db.uses
           .add({text: that.newUse})
           .then(function (result) {
@@ -141,6 +143,7 @@ export default {
     addAction () {
       if (this.newAction.length > 2) {
         let that = this
+
         this.$db.actions
           .add({text: that.newAction})
           .then(function (result) {

@@ -8,8 +8,6 @@
 export default {
   name: 'App'
 }
-// eslint-disable-next-line
-//console.log('example')
 </script>
 
 <style>
