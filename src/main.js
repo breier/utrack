@@ -14,10 +14,10 @@ const idb = new VueIdb({
   version: 1,
   database: 'utrack',
   schemas: [
-    { activities: '++id, type, uses, action, comment, datetime' },
+    { activities: '++id, type, uses, action, starttime, finishtime, location, comment' },
     { types: '++id, text' },
-    { uses: '++id, typeID, text' },
-    { action: '++id, useID, text' }
+    { uses: '++id, text' },
+    { actions: '++id, text' }
   ]
 })
 

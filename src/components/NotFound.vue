@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-     <br />
+    <br />
     <h3>Not Found</h3>
     <a href="#/">Go Home</a>
   </div>

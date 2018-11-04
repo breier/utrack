@@ -18,7 +18,7 @@ export default {
   src: url("./assets/Cantarell-Regular.woff");
 }
 html, body, #app {
-    height: 100%;
+  height: 100%;
 }
 body {
   color: #3A6B5C;
@@ -30,5 +30,11 @@ body {
   overflow-x: hidden;
   letter-spacing: 0.04em;
   font-smoothing: antialiased;
+}
+.btn {
+  line-height: 3em;
+}
+.btn + .btn {
+  margin-top: 2px;
 }
 </style>
